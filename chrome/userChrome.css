@@ -51,11 +51,6 @@
 /*  Removes urlbar border/background  */
 #urlbar-background{border: none !important; outline: none !important; transition: .15s !important;}
 
-/*  Cool animation on tab/bookmark icons  */
-.tabbrowser-tab:not([pinned]):not([selected]) .tab-icon-image ,.bookmark-item .toolbarbutton-icon{opacity: 0!important; transition: .15s !important; width: 0!important; padding-left: 16px!important}
-.tabbrowser-tab:not([pinned]):hover .tab-icon-image,.bookmark-item:hover .toolbarbutton-icon{opacity: 100!important; transition: .15s !important; display: inline-block!important; width: 16px!important; padding-left: 0!important}
-.tabbrowser-tab:not([hover]) .tab-icon-image,.bookmark-item:not([hover]) .toolbarbutton-icon{padding-left: 0!important}
-
 /*  Removes space after pinned tabs  */
 #tabbrowser-tabs[haspinnedtabs]:not([positionpinnedtabs])>#tabbrowser-arrowscrollbox>.tabbrowser-tab[first-visible-unpinned-tab] {margin-inline-start: 0!important}
 
@@ -89,12 +84,6 @@
 .titlebar-close:hover {background-color: #f44!important; fill: var(--toolbarbutton-icon-fill) !important; -moz-context-properties: fill !important; list-style-image: url("data:image/svg+xml,%3Csvg width='40' height='30' version='1.1' viewBox='0 0 40 30' xmlns='http://www.w3.org/2000/svg'%3E%3Ctitle%3EVetro%3C/title%3E%3Cpath transform='matrix(3.7796 0 0 3.7795 -165 -533.51)' d='m47.718 143.71-0.18707 0.18706 1.2294 1.2294-1.2294 1.2289 0.18707 0.18707 1.2294-1.2289 1.2289 1.2289 0.18707-0.18707-1.2289-1.2289 1.2289-1.2294-0.18707-0.18706-1.2289 1.2294z' fill='context-fill' style='paint-order:stroke fill markers;fill:%23ffffff' /%3E%3C/svg%3E%0A")!important;  margin: 0 !important; padding: 0!important; border: 0!important; border-radius: 0!important; height: 100%!important; width: 56px!important; appearance: none!important}
 .titlebar-close:active {background-color: #f33!important;  fill: var(--toolbarbutton-icon-fill) !important; -moz-context-properties: fill !important; list-style-image: url("data:image/svg+xml,%3Csvg width='40' height='30' version='1.1' viewBox='0 0 40 30' xmlns='http://www.w3.org/2000/svg'%3E%3Ctitle%3EVetro%3C/title%3E%3Cpath transform='matrix(3.7796 0 0 3.7795 -165 -533.51)' d='m47.718 143.71-0.18707 0.18706 1.2294 1.2294-1.2294 1.2289 0.18707 0.18707 1.2294-1.2289 1.2289 1.2289 0.18707-0.18707-1.2289-1.2289 1.2289-1.2294-0.18707-0.18706-1.2289 1.2294z' fill='context-fill' style='paint-order:stroke fill markers;fill:%23ffffff' /%3E%3C/svg%3E%0A")!important;  margin: 0 !important; padding: 0!important; border: 0!important; border-radius: 0!important; height: 100%!important; width: 56px!important; appearance: none!important}
 
-/*  Alltabs button  */
-#TabsToolbar-customization-target {counter-reset: tabCount}.tabbrowser-tab {counter-increment: tabCount}
-#alltabs-button>.toolbarbutton-badge-stack>.toolbarbutton-icon {fill: var(--toolbarbutton-icon-fill) !important; -moz-context-properties: fill !important; list-style-image: url("data:image/svg+xml,%3Csvg width='40' height='30' version='1.1' viewBox='0 0 40 30' xmlns='http://www.w3.org/2000/svg'%3E%3Ctitle%3EVetro%3C/title%3E%3Cpath transform='translate(49,-60)' d='m-29 78.888-7.0703-7.0703 0.70703-0.70703 6.3633 6.3633 6.3633-6.3633 0.70703 0.70703-6.3633 6.3633z' fill='context-fill' style='paint-order:stroke fill markers'/%3E%3C/svg%3E"); overflow: hidden!important; padding: 0!important; border: 0!important; width: 40px!important; height: calc(100% + 1px)!important; margin: 0 -2px 0 0!important; transform: translate(20%,15%); padding: 0 3px}
-#alltabs-button>.toolbarbutton-badge-stack {position: relative!important; border-radius: 0!important; padding: 0!important; border: 0!important; height: calc(100% + 1px)!important; width: 56px!important; margin: 0-2px 0 0!important}
-#alltabs-button>.toolbarbutton-badge-stack::before {content: counter(tabCount); color: var(--toolbarbutton-icon-fill) !important; position: absolute; bottom: 25%; left: 50%; transform: translate(-50%,-30%); padding: 0 3px}
-
 /*  Removes the background from the urlbar while not in use  */
 #urlbar:not(:hover):not([breakout][breakout-extend])>#urlbar-background {box-shadow: none!important; background: #0000 !important}
 
@@ -120,23 +109,6 @@
 #nav-bar{direction: rtl;} #urlbar-container, #customizationui-widget-panel{direction: ltr !important;}
 #forward-button{order: -1 !important;}
 #back-button{padding-right: 2px !important;} #forward-button{padding-right: 8px !important;}
-
-/*  Rounded corner in pages  *//*  layout.css.has-selector.enabled  */
-#main-window:has(#navigator-toolbox[style=""]) #tabbrowser-tabpanels, :not([sizemode="fullscreen"]) #tabbrowser-tabpanels{margin: -10px 0 0 0!important; border-top-left-radius: 10px !important; border-top-right-radius: 10px !important;}
-#main-window:has(#navigator-toolbox[style=""]) .browserStack>browser, :not([sizemode="fullscreen"]) .browserStack>browser{border-top-left-radius: 10px !important; border-top-right-radius: 10px !important;}
-#navigator-toolbox{padding-bottom: 10px;}
-[inFullscreen] #tabbrowser-tabpanels, [inFullscreen] .browserStack>browser{border-radius: 0 !important; margin: 0 !important; transition: border-radius .7s !important}
-.browserStack{background-color: transparent !important; border-radius: 10px !important; z-index: 2;}
-.browserContainer{background-color: transparent}
-.browserContainer:has(> .devtools-toolbox-bottom-iframe) .browserStack>browser{margin-bottom: -10px !important; border-bottom-right-radius: 10px !important; border-bottom-left-radius: 10px !important; transition: border-radius .2s !important}
-findbar{height: 50px; border: none !important; background-color: -moz-Dialog !important; z-index: 1;}
-.browserContainer:has(> .devtools-toolbox-bottom-iframe) findbar{border-bottom-right-radius: 10px; border-bottom-left-radius: 10px;}
-.findbar-container, findbar .close-icon{margin-top: 10px !important}
-.browserContainer:has(> findbar)  .browserStack>browser{margin-bottom: -10px !important; border-bottom-right-radius: 10px !important; border-bottom-left-radius: 10px !important; transition: border-radius .2s !important}
-.browserContainer:has(> .devtools-toolbox-bottom-iframe):has(> findbar) findbar{margin-bottom: -10px !important;}
-[inFullscreen] .browserContainer:has(> .devtools-toolbox-bottom-iframe) .browserStack>browser{margin-bottom: -10px !important; border-bottom-right-radius: 10px !important; border-bottom-left-radius: 10px !important; transition: border-radius .2s !important}
-[inFullscreen] .browserContainer:has(> findbar)  .browserStack>browser{margin-bottom: -10px !important; border-bottom-right-radius: 10px !important; border-bottom-left-radius: 10px !important; transition: border-radius .2s !important}
-#main-window{background-color: -moz-Dialog}
 
 /*  Devtools  */
 .devtools-horizontal-splitter{margin-top: 7px !important;margin-bottom:-12px !important;opacity: 0;}
